@@ -126,7 +126,7 @@ Simulation verifies:
 
 - Verilog HDL
 - Xilinx Vivado 2025.1
-- Boolean FPGA Board (if applicable)
+- Boolean FPGA Board 
 
 ---
 
