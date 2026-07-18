@@ -1,6 +1,6 @@
 # AES-Inspired Digital Authentication System
 
-A hardware-based digital authentication system implemented in **Verilog HDL** using an **AES-inspired encryption algorithm**. The design encrypts both the user-entered password and the stored password before comparison, improving security over plain-text authentication. An integrated attempt counter and lock controller enhance security by locking the system after multiple failed login attempts.
+A hardware based digital authentication system implemented in **Verilog HDL** using an **AES inspired encryption algorithm**. The design encrypts both the user entered password and the stored password before comparison, improving security over plain text authentication. An integrated attempt counter and lock controller enhance security by locking the system after multiple failed login attempts.
 
 ---
 
@@ -14,12 +14,12 @@ The project was designed, simulated, and synthesized using **Xilinx Vivado 2025.
 
 ## ✨ Features
 
-- AES-inspired password encryption
-- Hardware-based password authentication
+- AES inspired password encryption
+- Hardware based password authentication
 - Modular Verilog HDL design
 - Secure encrypted password comparison
-- Three-attempt security lock mechanism
-- FPGA-ready implementation
+- Three attempt security lock mechanism
+- FPGA ready implementation
 - Behavioral simulation and synthesis in Vivado
 
 ---
@@ -30,12 +30,12 @@ The project was designed, simulated, and synthesized using **Xilinx Vivado 2025.
 
 ---
 
-## ⚙️ Working Principle
+## ⚙️ How it works
 
 1. The user enters a password.
 2. The password is stored in the **Input Register**.
 3. The stored password is retrieved from **Password Memory**.
-4. Both passwords are encrypted independently using identical AES-inspired Encryptor modules.
+4. Both passwords are encrypted independently using identical Encryptor modules.
 5. The encrypted outputs are compared using the Comparator.
 6. If both encrypted values match, an **Unlock** signal is generated.
 7. If authentication fails, the Attempt Counter increments.
@@ -50,13 +50,16 @@ AES-Inspired-Digital-Authentication-System/
 │
 ├── src/
 │   ├── top.v
+│   ├── attempt_counter.v
+│   ├── comparator.v
 │   ├── encryptor.v
 │   ├── input_register.v
-│   ├── password_memory.v
-│   ├── comparator.v
-│   ├── attempt_counter.v
+│   ├── key_mixer.v
 │   ├── lock_controller.v
-│   └── ...
+│   ├── password_memory.v
+│   ├── permute.v
+│   ├── sbox4.v
+│   └── substitute.v
 │
 ├── testbench/
 │   └── top_tb.v
@@ -71,6 +74,7 @@ AES-Inspired-Digital-Authentication-System/
 │   └── simulation_waveform.png
 │
 ├── README.md
+├── LICENSE
 └── .gitignore
 ```
 
@@ -124,9 +128,14 @@ Simulation verifies:
 
 ## 🛠️ Tools Used
 
-- Verilog HDL
 - Xilinx Vivado 2025.1
 - Boolean FPGA Board 
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
